@@ -2,12 +2,11 @@ package wallet
 
 import (
 	"testing"
-	"time"
 )
 
 func TestSign(t *testing.T) {
 
-	w, _ := NewWallet("your_secret_api_key_sYIpNypce5sls6Ik", time.Duration(time.Second))
+	w, _ := NewWallet("your_secret_api_key_sYIpNypce5sls6Ik")
 	param := WebhookRequestHeader{
 		Signature: "MGfJzeEprADZbihhRcGcCY5pYTI/IEJ91ejyA+XOWAs=",
 		Timestamp: "168824905680291",
