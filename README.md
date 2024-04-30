@@ -1,5 +1,8 @@
 # wallet
+
 > Package for using Wallet Pay API https://docs.wallet.tg/pay/
+
+[![Build status](https://ci.appveyor.com/api/projects/status/v5lt859vmjm3v9i5?svg=true)](https://ci.appveyor.com/project/iscod/wallet)
 
 
 ## Supported endpoints
