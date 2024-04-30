@@ -26,7 +26,7 @@ go get github.com/iscod/wallet
 ### init wallet
 
 ```golang
-w, err := NewWallet("secret_api_key", time.Duration(time.Second))
+w, err := wallet.NewWallet("secret_api_key")
 
 if err != nil {
 	fmt.printf("Error creating wallet: %s\n", err)
@@ -34,10 +34,10 @@ if err != nil {
 ```
 
 ### create new order
-[/wpay/store-api/v1/order][createOrderEndpoint]
+[v1/order/create](https://docs.wallet.tg/pay/#tag/Order/operation/create)
 
 ```go
-w, err := NewWallet("secret_api_key", time.Duration(time.Second))
+w, err := wallet.NewWallet("secret_api_key")
 
 if err != nil {
     fmt.printf("Error creating wallet: %s\n", err)
@@ -53,14 +53,15 @@ createResponse, err := w.Create(&wallet.CreateParams{
 
 var order *wallet.Order = createResponse.Data
 
-fmt.Println(order.Id)
+fmt.Println(order.PayLink)
 ```
 
 ### get order preview
+
 [/wpay/store-api/v1/order/preview][getPreview]
 
 ```go
-w, err := NewWallet("secret_api_key", time.Duration(time.Second))
+w, err := wallet.NewWallet("secret_api_key")
 
 if err != nil {
     fmt.printf("Error creating wallet: %s\n", err)
@@ -72,3 +73,10 @@ var order *wallet.Order = previewResponse.Data
 
 fmt.Println(order.Id)
 ```
+
+<!-- Markdown link & img dfn's -->
+
+[createOrderEndpoint]: https://docs.wallet.tg/pay/#tag/Order/operation/create
+[getPreview]: https://docs.wallet.tg/pay/#tag/Order/operation/getPreview
+[getOrderList]: https://docs.wallet.tg/pay/#tag/Order-Reconciliation/operation/getOrderList
+[getOrderAmount]: https://docs.wallet.tg/pay/#tag/Order-Reconciliation/operation/getOrderAmount

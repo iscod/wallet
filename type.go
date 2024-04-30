@@ -17,7 +17,7 @@ const (
 
 type Amount struct {
 	Amount       string `json:"amount"`       // 1.000
-	CurrencyCode string `json:"currencyCode"` //USDT,TON,BTC
+	CurrencyCode string `json:"currencyCode"` //"TON" "BTC" "USDT" "EUR" "USD" "RUB"
 }
 
 type SelectedPaymentOption struct {
@@ -50,14 +50,14 @@ type Items struct {
 
 type CreateParams struct {
 	Amount                 Amount `json:"amount"`
-	AutoConversionCurrency string `json:"autoConversionCurrency,omitempty"` //"USDT"
+	AutoConversionCurrency string `json:"autoConversionCurrency,omitempty"` //USDT,TON,BTC
 	Description            string `json:"description"`                      //"VPN for 1 month"
 	ReturnUrl              string `json:"returnUrl"`                        //"https://t.me/wallet/start?startapp"
 	FailReturnUrl          string `json:"failReturnUrl"`                    //"https://t.me/wallet"
 	CustomData             string `json:"customData,omitempty"`             //"client_ref=4E89"
 	ExternalId             string `json:"externalId"`                       //"ORD-5023-4E89"
 	TimeoutSeconds         int    `json:"timeoutSeconds"`                   //"10800"
-	CustomerTelegramUserId int    `json:"customerTelegramUserId"`           //"0"
+	CustomerTelegramUserId int64    `json:"customerTelegramUserId"`           //"0"
 }
 
 type CreateResponse struct {

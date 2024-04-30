@@ -31,8 +31,9 @@ func (w *Wallet) getHeaders() map[string]string {
 }
 
 const HOST = "https://pay.wallet.tg"
+const timeoutSeconds = time.Duration(time.Second * 60)
 
-func NewWallet(apiKey string, timeoutSeconds time.Duration) (*Wallet, error) {
+func NewWallet(apiKey string) (*Wallet, error) {
 	return &Wallet{apiKey: apiKey, Client: &http.Client{Timeout: timeoutSeconds}}, nil
 }
 

@@ -1,6 +1,6 @@
 image: Ubuntu
 
-#clone_folder: /usr/go/src/github.com/iscod/wallet
+clone_folder: /usr/go/src/github.com/iscod/wallet
 
 environment:
   GOPATH: /usr/go/
